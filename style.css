@@ -9,6 +9,14 @@ body {
     /* cursor: url('src/fag.png') 4 12, pointer; */
 }
 
+@font-face {
+    font-family: 'Rodondo';
+    src: url('src/Rodondo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
 #zvuksld {
     position: fixed;
     bottom: 30px;
