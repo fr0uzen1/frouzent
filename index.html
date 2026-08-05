@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>frouzent</title>
+    <link rel="icon" href="src/fag.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="huy.js"></script>
+    <script src="pipe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <meta property="og:title" content="Frouzent">
+    <meta property="og:description" content="huuuh???">
+    <meta property="og:image" content="https://fr0uzen1.github.io/frouzent/">
+    <meta name="theme-color" content="#FFF">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    
+    <div id="start">
+        <span>click to start</span>
+    </div>
+
+    <video loop muted class="bg-video" id="bgVideo">
+        <source src="src/bg.mp4" type="video/mp4">
+    </video>
+
+    <input type="range" id="zvuksld" min="0" max="1" step="0.01" value="1">
+
+    <!-- <div class="content">
+        <h1>frouzent</h1>
+        <a href="youtube.com/@frouzent" target="_blank"><img src="src/yt.png"></a>
+        <a href="discord.com/users/frouzent" target="_blank"><img src="src/ds.png"></a>
+        <a href="steamcommunity.com/id/76561199241105568" target="_blank"><img src="src/steam.png"></a>
+    </div> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const start = document.getElementById('start');
+            const video = document.getElementById('bgVideo');
+            const slider = document.getElementById('zvuksld');
+            const hoverSound = new Audio('src/UI_UIMetal1.wav');
+            let canPlay = false;
+
+            video.volume = 0.2;
+            if (slider) slider.value = 0.2;
+
+            const updateSlider = (el) => {
+                const percent = (el.value / el.max) * 100;
+                el.style.background = `linear-gradient(to right, #fff ${percent}%, transparent ${percent}%)`;
+            };
+
+            if (slider) updateSlider(slider);
+
+            start.onclick = () => {
+                start.style.opacity = '0';
+                setTimeout(() => start.style.display = 'none', 400);
+                video.muted = false;
+                video.play().catch(() => {});
+                canPlay = true;
+                if (slider) slider.style.display = 'block';
+            };
+
+            document.querySelectorAll('.content a img, .dcname').forEach(link => {
+                link.onmouseenter = () => {
+                    if (!canPlay) return;
+                    const sound = hoverSound.cloneNode();
+                    sound.volume = 0.5; 
+                    sound.play().catch(() => {});
+                };
+            });
+
+            if (slider) {
+                slider.oninput = function() {
+                    video.volume = this.value;
+                    updateSlider(this);
+                };
+            }
+        });
+
+        
+    </script>
+
+    <div class="content">
+        <!-- <h1>frouzent</h1> -->
+        <h1 class="titleshit">
+            <span style="--size: 50px; --y: 7px">f</span>
+            <span style="--size: 65px; --y: 4px">r</span>
+            <span style="--size: 80px; --y: 1px">o</span>
+            <span style="--size: 90px; --y: 0px">u</span>
+            <span style="--size: 90px; --y: 0px">z</span>
+            <span style="--size: 80px; --y: 1px">e</span>
+            <span style="--size: 65px; --y: 4px">n</span>
+            <span style="--size: 50px; --y: 7px">t</span>
+        </h1>
+
+        <a href="https://youtube.com/@frouzent" target="_blank"><img src="src/yt.png"></a>
+        <span style="position:relative;display:inline-block"><img src="src/ds.png" alt="discord" class="dcname" style="cursor:pointer" onclick="navigator.clipboard.writeText('frouzent');let s=this.nextSibling.style;s.opacity=1;s.top='-20px';clearTimeout(this.t);this.t=setTimeout(()=>{s.opacity=0;s.top='0'},1000)"><i style="position:absolute;left:50%;top:0;transform:translateX(-50%);color:#fff;font:14px 'Rodondo',sans-serif;opacity:0;transition:.3s;pointer-events:none">copied @frouzent</i></span>
+        <a href="https://steamcommunity.com/profiles/76561199241105568/" target="_blank"><img src="src/steam.png"></a>
+    </div>
+
+</body>
+</html> 
+
+<!-- ⠓⠄⢀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⢉⠔⠡⢌⠢⠑⢎⠦⡙⠦⡈⢄⡱⢦⠑⣎
+⠀⠀⠰⢓⠵⠢⡦⣤⢀⣀⢀⠀⡠⠄⡄⠨⠁⢌⠠⣉⠈⢤⢌⢄⣨⣤⣵⣶⣾⣿
+⠀⠀⠀⠘⠤⢄⡕⠉⣎⠍⢨⣴⣷⣤⣗⢀⠠⣬⣰⣿⣶⣘⣾⣼⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⢀⠖⠋⠛⠛⠷⣿⣿⡩⠕⢻⡻⣿⢻⣿⣿⣿⡿⠟⠛⠛⠛⢿⣿⠁⠀
+⠀⠀⠀⠀⡀⠀⠀⠀⠀⡀⠈⢻⡇⣠⡿⠑⣽⣯⣿⣿⠋⠀⠀⠀⠀⠀⠻⣍⠆⠀
+⠀⠀⠀⠀⢛⠦⣤⣤⣠⣤⠀⠘⠃⡔⠙⣴⢮⢻⡽⡉⠀⣤⣤⣤⡤⠴⡛⣽⣆⣭
+⠀⠀⠀⠀⠀⠒⡤⠐⠒⡀⠀⠂⠁⡬⣯⢯⣆⠴⢔⣡⢆⠜⣸⠠⣹⢺⡽⡽⡷⣿
+⠀⠀⠀⠐⠢⢥⡄⠜⠠⠻⣏⣄⡁⠀⠹⡠⡀⢋⣀⣠⣿⣿⣧⣿⣾⣿⣦⣉⢴⣾
+⠀⠀⠀⠀⠀⡈⠳⡤⠦⠤⢽⢿⣷⣆⠀⡁⠓⣬⣿⣿⣿⣿⣿⣿⣿⣿⣿⡯⣼⡏
+⠀⠀⠀⠀⠀⢰⣢⣙⠭⡞⣭⣛⡿⣿⠏⠁⢺⣿⣿⣿⣿⣿⣿⣿⣿⣏⣏⡧⠇⡸
+⠀⠀⠀⠀⠠⢫⢷⡿⣿⣷⣶⣭⡞⣵⢻⡿⣟⣾⣽⣿⣿⣿⣿⣿⣿⣿⡿⠧⡀
+         Опа, неожиданная плювиска  -->

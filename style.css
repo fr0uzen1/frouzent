@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    /* cursor: url('src/fag.png') 4 12, pointer; */
+}
+
+#zvuksld {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 200px;
+    height: 10px;
+    border-radius: 8px;
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    background: linear-gradient(to right, #fff var(--fill, 0%), transparent var(--fill, 0%));
+}
+
+#zvuksld::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0; 
+    height: 0;
+    mix-blend-mode: difference;
+    background: transparent;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    margin-top: 0;
+}
+
+#zvuksld::-moz-range-thumb {
+    width: 0;
+    height: 0;
+    border: none;
+    mix-blend-mode: difference;
+    background: transparent;
+    cursor: pointer;
+}
+
+::selection {
+    background-color: #fff; 
+    color: #000;        
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    mix-blend-mode: difference;
+}
+
+/* h1 {
+    font-family: "Rodondo", sans-serif;
+    color: white;
+    font-size: 50px;
+} */
+
+.titleshit {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: -10px;
+    padding-bottom: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.titleshit span {
+    font-family: "Rodondo", sans-serif;
+    color: white;
+    font-size: var(--size);
+    line-height: 1.2;
+    display: inline-block;
+    transform: translateY(var(--y));
+}
+
+img {
+    width: 64px;
+    height: 64px;
+    margin: 10px;
+    transition: transform 0.2s ease-out; 
+    will-change: transform;
+}
+
+img:hover {
+    transform: scale(1.15); 
+    /* filter: brightness(1.4);  */
+}
+
+#start {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font: 128px "Rodondo", sans-serif;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    perspective: 200px;
+}
+
+#start span {
+    display: inline-block;
+    transform: scaleY(2) rotateX(-15deg);
+    animation: slideFromTop .8s cubic-bezier(.25,.46,.45,.94) forwards;
+    transform-origin: center center;
+}
+
+#start.fade-out span {
+    animation: slideToTop .8s cubic-bezier(.55,.085,.68,.53) forwards;
+}
+
+@keyframes slideFromTop {
+    0% { transform: scaleY(2) rotateX(-70deg) translateY(-250%) scale(.5); opacity: 0; }
+    100% { transform: scaleY(1) rotateX(-5deg) translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes slideToTop {
+    0% { transform: scaleY(3) rotateX(-15deg) translateY(0) scale(1); opacity: 1; }
+    100% { transform: scaleY(3) rotateX(-15deg) translateY(-300%) scale(.5); opacity: 0; }
+}
+#start {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font: 128px "Rodondo", sans-serif;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    perspective: 200px;
+    transition: opacity .4s ease;
+    opacity: 1;
+}
+
+#start span {
+    display: inline-block;
+    transform: scaleY(2) rotateX(-15deg);
+    animation: slideFromTop .8s cubic-bezier(.25,.46,.45,.94) forwards;
+    transform-origin: center center;
+}
+
+#start.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#start.fade-out span {
+    animation: slideToTop .8s cubic-bezier(.55,.085,.68,.53) forwards;
+}
+
+@keyframes slideFromTop {
+    0% { transform: scaleY(2) rotateX(-70deg) translateY(-250%) scale(.5); opacity: 0; }
+    100% { transform: scaleY(1) rotateX(-5deg) translateY(0) scale(1); opacity: 1; }
+}
+@keyframes slideToTop {
+    0% { transform: scaleY(3) rotateX(-15deg) translateY(0) scale(1); opacity: 1; }
+    100% { transform: scaleY(3) rotateX(-15deg) translateY(-300%) scale(.5); opacity: 0; }
+}
